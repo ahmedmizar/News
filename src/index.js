@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from "./appRedux/store/index"
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'font-awesome/css/font-awesome.min.css';
 import './index.scss';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';

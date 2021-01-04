@@ -1,26 +1,12 @@
 import React, { Component } from 'react';
 import Auxiliary from '../Auxiliary';
-import Navbar from '../../components/Navbar/Navbar';
+import Navbar from '../../components/Header/Header';
 import Footer from "../../components/Footer/Footer"
 
 import "./Layout.scss"
 
 class Layout extends Component {
-	state = {
-		current: 'mail',
-		visible: false
-	}
-	showDrawer = () => {
-		this.setState({
-			visible: true,
-		});
-	};
 
-	onClose = () => {
-		this.setState({
-			visible: false,
-		});
-	};
 
 
 	render() {
