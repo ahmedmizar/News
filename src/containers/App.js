@@ -17,13 +17,16 @@ class App extends Component {
   render() {
     console.log(this.state.data);
     return (
-      <div>
-        {this.state.data.map((post, key) => (
-          <div key={key} className="post-detail">
-            <p>{moment(post.publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
-          </div>
-        ))}
-      </div>
+      // <div>
+      //   {this.state.data.map((post, key) => (
+      //     <div key={key} className="post-detail">
+      //       <p>{moment(post.publishedAt).format('MMMM Do YYYY, h:mm a')}</p>
+      //     </div>
+      //   ))}
+      // </div>
+      <Layout>
+        
+      </Layout>
     );
   }
 }
