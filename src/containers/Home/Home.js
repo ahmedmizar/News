@@ -8,35 +8,18 @@ import moment from "moment";
 import data from "../../data/news.json";
 import Card from '../../components/Card/Card'
 class Home extends Component {
-    state = {
-        data: [],
-    };
-    componentDidMount() {
-        this.props.fetchNews()
-        this.setState({ data: data.articles });
-    }
     compare = (a, b) => {
-        if (moment(a.publishedAt).format('MMMM Do YYYY, h:mm a') < moment(b.publishedAt).format('MMMM Do YYYY, h:mm a')) {
+        if (a.publishedAt > b.publishedAt) {
             return -1;
         }
-        if (moment(a.publishedAt).format('MMMM Do YYYY, h:mm a') > moment(b.publishedAt).format('MMMM Do YYYY, h:mm a')) {
+        if (a.publishedAt < b.publishedAt) {
             return 1;
         }
         return 0;
     }
 
-
     render() {
-        var arr2 = this.state.data.map((post, key) => (
-            
-            <Col sm="12" md="6" xl="3" key={key}>
-                <Card title={post.title} urlToImage={post.urlToImage} publishedAt={moment(post.publishedAt).format('MMMM Do YYYY, h:mm a')}>
-                    {/* <p>{moment(post.publishedAt).format('MMMM Do YYYY, h:mm a')}</p> */}
-                </Card>
-            </Col>
-        )).sort(this.compare);
-        let lastArray = arr2.slice(1,9)
-        console.log(lastArray)
+        // onClick={() => this.props.history.push("/singleNews", Item)}
         return (
             <div className="home">
                 <header>
@@ -53,9 +36,16 @@ class Home extends Component {
                         <Link to="/allNews">Show all</Link>
                     </div>
                     <Row>
-
-                       {lastArray}
-
+                        {data.articles.sort(this.compare).slice(0, 8).map((Item, key) => {
+                            return (
+                                <Col sm="12" md="6" xl="3" key={key} onClick={() => this.props.history.push("/singleNews", Item)}>
+                                    <Card
+                                        title={Item.title} urlToImage={Item.urlToImage}
+                                        publishedAt={moment(Item.publishedAt).format('MMM DD/YYYY, h:mm a')}>
+                                    </Card>
+                                </Col>
+                            )
+                        })}
                     </Row>
                 </div>
             </div>

@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-
 import { Route, Switch, Router, BrowserRouter } from "react-router-dom";
-import "./App.css";
 import Layout from "../hos/Layout/Layout";
-import moment from "moment";
-import data from "../data/news.json";
-import { history } from "../appRedux/store/index";
 import Home from "./Home/Home";
 import AllNews from "./AllNews/AllNews";
+import SingleNews from "./SingleNews/SingleNews";
 
 class App extends Component {
 
@@ -16,7 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Layout>
-          <Route
+            <Route
               exact
               path="/"
               component={Home}
@@ -30,6 +26,11 @@ class App extends Component {
               exact
               path="/allNews"
               component={AllNews}
+            />
+            <Route
+              exact
+              path="/singleNews"
+              component={SingleNews}
             />
           </Layout>
         </Switch>

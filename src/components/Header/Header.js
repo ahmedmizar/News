@@ -19,10 +19,10 @@ const Header = () => {
 
           <ul className={click ? "nav-options active" : "nav-options"}>
             <li className="option" onClick={closeMobileMenu}>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-            <Link to="/allNews">All News</Link>
+              <Link to="/allNews">All News</Link>
             </li>
           </ul>
         </div>
@@ -47,7 +47,7 @@ const Header = () => {
         </li>
         <li onClick={closeMobileMenu}>
           <a href="" className="signup-btn">
-            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <i className="fa fa-user-circle-o" aria-hidden="true"></i>
           </a>
         </li>
       </ul>

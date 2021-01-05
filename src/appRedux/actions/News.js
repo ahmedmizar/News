@@ -1,4 +1,3 @@
-import { HtttpGetDefult } from "../httpClient/httpClient";
 import data from "../../data/news.json"
 import axios from "axios"
 import {
