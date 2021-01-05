@@ -2,19 +2,11 @@ import React, { Component } from 'react';
 import Auxiliary from '../Auxiliary';
 import Navbar from '../../components/Header/Header';
 import Footer from "../../components/Footer/Footer"
-
 import "./Layout.scss"
-
 class Layout extends Component {
-
-
-
 	render() {
-		console.log(this.props)
 		return (
-
 			<Auxiliary>
-
 				<Navbar />
 				<main>
 					{this.props.children}

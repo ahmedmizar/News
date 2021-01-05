@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ReactComponent as CloseMenu } from "../../assests/Icons/x.svg";
 import { ReactComponent as MenuIcon } from "../../assests/Icons/menu.svg";
 import { Input, InputGroup } from "reactstrap"
-
+import { Link } from 'react-router-dom';
 import "./Header.scss";
 
 const Header = () => {
@@ -14,15 +14,15 @@ const Header = () => {
       <div className="nav-left">
         <div className="logo-nav">
           <div className="logo-container">
-            <a href="#">{/* <Logo className="logo" /> */}</a>
+            <a href="#"><img src={require("../../assests/images/header_logo.jpg")} /></a>
           </div>
 
           <ul className={click ? "nav-options active" : "nav-options"}>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="#">Home</a>
+              <Link to="/home">Home</Link>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="#">All News</a>
+            <Link to="/allNews">All News</Link>
             </li>
           </ul>
         </div>

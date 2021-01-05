@@ -1,15 +1,19 @@
 footer {
   text-align: center;
-  background: #232960;
+  background: #232860;
   font-size: 15px;
-  bottom: 0;
   width: 100%;
-  z-index: 14;
-  height: 170px;
+  width: 100%;
+  height: 192px;
   padding: 0px 10px;
+
   .footer-logo {
-    height: 110px;
+    height: 132px;
     line-height: 110px;
+    @media only screen and (max-width: 767.98px) {
+      height: 110px;
+      line-height: 110px;
+    }
   }
   hr {
     background: #6c757d;
@@ -21,10 +25,18 @@ footer {
     align-items: center;
     color: #fff;
     height: 60px;
+    @media only screen and (max-width: 767.98px) {
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      height: 82px;
+      flex-direction: column;
+    }
     .footer-links {
       ul {
         list-style: none;
         margin: 0;
+        padding: 0;
         li {
           display: inline-block;
           padding-right: 10px;

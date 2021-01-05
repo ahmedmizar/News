@@ -1,32 +1,40 @@
 import React, { Component } from "react";
 
-import { Route, Switch, Router, Redirect } from "react-router-dom";
+import { Route, Switch, Router, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Layout from "../hos/Layout/Layout";
 import moment from "moment";
 import data from "../data/news.json";
 import { history } from "../appRedux/store/index";
+import Home from "./Home/Home";
+import AllNews from "./AllNews/AllNews";
 
 class App extends Component {
-  state = {
-    data: [],
-  };
-  componentDidMount() {
-    this.setState({ data: data.articles });
-  }
+
   render() {
-    console.log(this.state.data);
     return (
-      // <div>
-      //   {this.state.data.map((post, key) => (
-      //     <div key={key} className="post-detail">
-      //       <p>{moment(post.publishedAt).format('MMMM Do YYYY, h:mm a')}</p>
-      //     </div>
-      //   ))}
-      // </div>
-      <Layout>
-        
-      </Layout>
+      <BrowserRouter>
+        <Switch>
+          <Layout>
+          <Route
+              exact
+              path="/"
+              component={Home}
+            />
+            <Route
+              exact
+              path="/home"
+              component={Home}
+            />
+            <Route
+              exact
+              path="/allNews"
+              component={AllNews}
+            />
+          </Layout>
+        </Switch>
+      </BrowserRouter>
+
     );
   }
 }

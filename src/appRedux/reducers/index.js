@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
-import fetchUsersReducer from "./FetchUsersReducer";
+import newsReducer from "./News";
 
 
 
@@ -8,7 +8,7 @@ import fetchUsersReducer from "./FetchUsersReducer";
 const rootReducer = (history) =>
   combineReducers({
     router: connectRouter(history),
-    fetchUsersReducer: fetchUsersReducer
+    news: newsReducer
   });
 
 export default rootReducer;

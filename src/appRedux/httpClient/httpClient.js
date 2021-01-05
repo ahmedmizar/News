@@ -1,9 +1,8 @@
 import * as axios from "axios";
 import Configs from "../../config/config";
-// import { displayToast } from "../globals/globals";
-import { changeLang } from "../../i18n";
+
 import { getlang } from "../../globals/globals";
-import i18n from "../../i18n";
+
 let token= localStorage.getItem("token")
 
 const httpClient = axios.create();
@@ -60,18 +59,18 @@ function errorHandler(err, data) {
 
   if (data.error_description) {
     if (data.error_description === "Bad credentials") {
-      errMsg = i18n.t("Errors.400");
+     
     } else errMsg = data.error_description;
   } else {
     if (err === 404) {
-      errMsg = i18n.t("Errors.404");
+      
     } else if (err === 401) {
-      errMsg = i18n.t("Errors.401");
+     
     } else {
       if (typeof data == "string") {
         errMsg = data;
       } else {
-        errMsg = i18n.t("Errors.General");
+        
       }
     }
   }

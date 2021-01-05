@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
- 
+import "./Card.scss" 
 const Card = (props) => {
     return (
-        <div>
-            <img src={props.srce}/>
+        <div className="news_card">
+            <img src={props.urlToImage}/>
              <h3>{props.title}</h3>
              <p>{props.publishedAt}</p>
             <p></p>

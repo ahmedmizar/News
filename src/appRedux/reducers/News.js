@@ -1,37 +1,37 @@
 import {
-    FETCH_USERS_REQUEST,
-    FETCH_USERS_SUCCESS,
-    FETCH_USERS_FAILURE
-  } from "../../constants/ActionTypes";
+    FETCH_NEWS_REQUEST,
+    FETCH_NEWS_SUCCESS,
+    FETCH_NEWS_FAILURE
+} from "../../constants/NewsTypes";
   const INIT_STATE = {
     loader:true,
-    users: [],
+    news: [],
     error: ""
 
   }
-  const fetchUsersReducer = (state= INIT_STATE, action) => {
+  const newsReducer = (state= INIT_STATE, action) => {
       switch (action.type) {
-          case FETCH_USERS_REQUEST: {
+          case FETCH_NEWS_REQUEST: {
               return {
                   ...state,
                   loader: true
               }
 
           }
-          case FETCH_USERS_SUCCESS: {
+          case FETCH_NEWS_SUCCESS: {
             return {
                 
                 loader: false,
-                users: action.payload,
+                news: action.payload,
                 error: ""
             }
 
         }
-        case FETCH_USERS_FAILURE: {
+        case FETCH_NEWS_FAILURE: {
             return {
                 
                 loader: false,
-                users: [],
+                news: [],
                 error: action.payload
             }
 
@@ -40,4 +40,4 @@ import {
           
       }
   }
-  export default fetchUsersReducer;
+  export default newsReducer;
