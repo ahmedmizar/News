@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { ReactComponent as CloseMenu } from "../../assests/Icons/x.svg";
 import { ReactComponent as MenuIcon } from "../../assests/Icons/menu.svg";
-import { Input, InputGroup } from "reactstrap"
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./Header.scss";
 
 const Header = () => {
@@ -14,7 +13,9 @@ const Header = () => {
       <div className="nav-left">
         <div className="logo-nav">
           <div className="logo-container">
-            <a href="#"><img src={require("../../assests/images/header_logo.jpg")} /></a>
+            <a href="#">
+              <img src={require("../../assests/images/header_logo.jpg")} />
+            </a>
           </div>
 
           <ul className={click ? "nav-options active" : "nav-options"}>
@@ -30,8 +31,8 @@ const Header = () => {
           {click ? (
             <CloseMenu className="menu-icon" />
           ) : (
-              <MenuIcon className="menu-icon" />
-            )}
+            <MenuIcon className="menu-icon" />
+          )}
         </div>
       </div>
       <ul className="nav-right">

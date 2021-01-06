@@ -24,6 +24,9 @@
       padding: 0;
       white-space: nowrap;
       border: 1px solid #dad7d7;
+      &:disabled {
+        cursor: not-allowed;
+      }
       &:focus {
         outline: none;
         box-shadow: none;

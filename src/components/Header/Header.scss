@@ -4,9 +4,19 @@
   display: flex;
   justify-content: space-between;
   line-height: 55px;
-  background: -webkit-linear-gradient(135deg, #4752b5 15%, #4752b5 16%, #6b85ff 15%);
+  background: -webkit-linear-gradient(
+    135deg,
+    #4752b5 15%,
+    #4752b5 16%,
+    #6b85ff 15%
+  );
   background: -o-linear-gradient(135deg, #4752b5 15%, #4752b5 16%, #6b85ff 15%);
-  background: -moz-inear-gradient(135deg, #4752b5 15%, #4752b5 16%, #6b85ff 15%);
+  background: -moz-inear-gradient(
+    135deg,
+    #4752b5 15%,
+    #4752b5 16%,
+    #6b85ff 15%
+  );
   background: linear-gradient(135deg, #4752b5 15%, #4752b5 16%, #6b85ff 15%);
   position: fixed;
   top: 0;
